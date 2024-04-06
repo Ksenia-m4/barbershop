@@ -23,3 +23,12 @@ h1 {
   color: var(--main-white-color);
   background-color: var(--secondary-light-font-color);
 }
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}

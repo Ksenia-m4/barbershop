@@ -1,0 +1,25 @@
+:root {
+  --main-white-color: #ffffff;
+  --accent-color: #ff6c00;
+  --main-font-color: #555555;
+  --secondary-font-color: #303030;
+  --secondary-light-font-color: #9da4bd;
+}
+
+/* main styles */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--main-white-color);
+  font-size: 14px;
+  color: var(--main-font-color);
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  letter-spacing: 0.05em;
+  color: var(--main-white-color);
+  background-color: var(--secondary-light-font-color);
+}

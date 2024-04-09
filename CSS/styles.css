@@ -4,6 +4,8 @@
   --main-font-color: #555555;
   --secondary-font-color: #303030;
   --secondary-light-font-color: #9da4bd;
+  --secondary-transparent-font-color: rgba(157, 164, 189, 0.6);
+  --secondary-bg-color: #f7f7f7;
 }
 
 /* main styles */
@@ -37,15 +39,18 @@ img {
   display: block;
 }
 
-h1 {
-  margin: 0 0 20px;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 72px;
-  letter-spacing: 0.05em;
-
-  color: var(--main-white-color);
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .link {
@@ -61,9 +66,40 @@ h1 {
   outline: 2px solid tomato;
 }
 
+/* main font styles */
+
+h1 {
+  margin: 0 0 20px;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  letter-spacing: 0.05em;
+
+  color: var(--main-white-color);
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--secondary-font-color);
+}
+
+.section-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 42px;
+  letter-spacing: 0.05em;
+  color: var(--secondary-font-color);
+}
+
+/* buttons */
+
 .button {
   padding: 12px 20px;
   min-width: 160px;
+  /* height: 40px; */
 
   font-weight: 600;
   font-size: 12px;
@@ -93,39 +129,121 @@ h1 {
 }
 
 /* header */
+
 .header {
-  padding-top: 32px;
+  padding-top: 40px;
+
+  background-color: #505050;
 }
 
-.header-link {
+.header-logo {
+  margin-right: 70px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  margin-right: auto;
+  /* flex-grow: 2; */
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* .header-item:not(:last-child) {
+  margin-right: 30px;
+} */
+
+.header-item,
+.header-contact {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.1em;
+
   color: var(--main-white-color);
+  /* outline: 1px solid tomato; */
 }
 
-.header-link:hover,
-.header-link:focus {
+.header-item:hover,
+.header-item:focus,
+.header-contact:hover,
+.header-contact:focus {
   color: var(--accent-color);
 }
 
-.header-link.contact {
+.header-right-link {
+  display: flex;
+}
+
+.header-contact {
+  margin-right: 45px;
   text-transform: uppercase;
 }
 
 /* hero */
-.hero,
-.header {
-  background-color: #505050;
+/* Это веременно до 4 модуля */
+
+.hero-container {
+  display: flex;
 }
 
-.top-title {
+/* socials */
+/* ???????? как сделать чтобы текст шел снизу вверх, 
+посмотреть у Андрея */
+.hero-socials {
+  width: 113px;
+  /* display: flex; */
+}
+
+.hero-socials-link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--secondary-font-color);
+  outline: 1px solid tomato;
+
+  /* transform: rotate(90deg); */
+}
+
+.hero-socials-link:hover,
+.hero-socials-link:focus {
+  color: var(--accent-color);
+}
+/* hero wrap */
+
+.hero-content {
+  flex-grow: 1;
+  padding: 272px 100px 206px;
+  /* width: calc(100% - 113px); */
+  background-color: #505050;
+}
+.hero-content > .top-title {
   margin-top: 0;
   margin-bottom: 20px;
 }
 
-.hero-content {
+.hero-content > .subtitle {
+  margin-bottom: 20px;
+  color: rgba(157, 164, 189, 0.6);
+}
+
+.hero-bottom-content {
   margin: 0 0;
+  max-width: 360px;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
@@ -139,11 +257,31 @@ h1 {
 }
 
 /* about */
-.section-title {
+.about.container {
+  display: flex;
+}
+
+.about-img-list {
+  display: flex;
+  margin-right: 64px;
+}
+.about-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.about-content-container {
+  padding-right: 91px;
+}
+
+.about-content-container > .subtitle {
+  margin-bottom: 20px;
+}
+
+.about-content-container > .section-title {
   margin: 0 0 20px;
 }
 
-.content {
+.about-content {
   margin: 0 0 20px;
 
   font-size: 18px;
@@ -152,7 +290,7 @@ h1 {
   color: var(--main-font-color);
 }
 
-.content.bottom {
+.bottom.about-content {
   margin-bottom: 40px;
 
   font-size: 14px;
@@ -160,19 +298,246 @@ h1 {
 }
 
 /* prices */
+.prices.section {
+  background-color: #505050;
+}
+
+.prices > .subtitle {
+  margin-bottom: 20px;
+  color: var(--secondary-transparent-font-color);
+}
+
 .prices.section-title {
   margin-bottom: 44px;
+  color: #fff;
+}
+
+.prices-content {
+  display: flex;
+  margin-bottom: 50px;
 }
 
 .prices-list {
-  outline: 2px solid black;
+  width: calc(100% / 2);
+
+  outline: 2px solid tomato;
   padding: 30px 40px;
 }
 
 .prices-item {
-  margin: 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.prices-item-text {
   font-size: 18px;
   line-height: 1.67;
   color: var(--secondary-light-font-color);
   letter-spacing: 0.02em;
+}
+
+.prices-item:last-child {
+  margin-bottom: 0;
+}
+
+.prices .button {
+  color: var(--main-white-color);
+}
+
+/* Features */
+.features.container {
+  display: flex;
+}
+
+.features-left-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 370px;
+  margin-right: 130px;
+}
+
+.features-list {
+  /* width: 170px; */
+  width: calc((100% - 30px) / 2);
+  padding: 16px 24px 19px 24px;
+
+  text-align: center;
+  background-color: var(--secondary-bg-color);
+}
+
+.features-list:nth-child(odd) {
+  margin-right: 30px;
+}
+
+/*но если есть более простая схема поменяю после видео */
+.features-list:nth-child(1) {
+  margin-bottom: 30px;
+}
+
+.features-list:nth-child(2) {
+  margin-top: 35px;
+}
+
+.features-list:nth-child(3) {
+  margin-bottom: 35px;
+}
+
+.features-list:nth-child(4) {
+  margin-top: 30px;
+}
+
+.features-top-item {
+  display: inline-block;
+  margin-bottom: 6px;
+
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.features-botton-item {
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+}
+
+.features-content-container {
+  width: 500px;
+}
+
+.features .subtitle {
+  margin-bottom: 20px;
+}
+
+.features .section-title {
+  margin-bottom: 20px;
+}
+
+.features-content {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+}
+/* Barbers */
+
+.barbers.section {
+  background-color: var(--secondary-bg-color);
+}
+
+.barbers .subtitle {
+  margin-bottom: 20px;
+}
+
+.barbers .section-title {
+  margin-bottom: 44px;
+}
+
+.barbers-list {
+  display: flex;
+}
+
+.barbers-img {
+  margin-bottom: 30px;
+}
+
+.barbers-item {
+  width: calc((100% - 60px) / 3);
+}
+
+.barbers-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.barber-secondary-title {
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.barber-subtitle {
+  text-align: center;
+  color: var(--accent-color);
+}
+
+/* portfolio */
+.portfolio .subtitle {
+  margin-bottom: 44px;
+}
+
+.portfolio-list {
+  display: flex;
+  gap: 30px;
+}
+
+.portfolio-item {
+  width: calc((100% - 90px) / 4);
+}
+
+/* .portfolio-item:not(:last-child) {
+  margin-right: 30px;
+} */
+
+/* form-contacts */
+
+.form-contacts {
+  display: flex;
+  background-color: #505050;
+}
+
+.form-contacts .container {
+  display: flex;
+}
+
+.form-contacts .section-title {
+  color: var(--main-white-color);
+}
+
+/* form */
+.form {
+}
+
+/* contacts */
+.contacts .section-title {
+  margin-bottom: 40px;
+}
+
+.contacts-list {
+  margin-bottom: 70px;
+  font-style: normal;
+}
+
+.contacts-item {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--secondary-light-font-color);
+}
+
+.contacts-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.contacts-item.map {
+  font-weight: 700;
+}
+
+.contacts-item.mail {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.contacts .subtitle {
+  margin-bottom: 20px;
+  color: var(--main-white-color);
+}
+
+.contacts-schedule {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--secondary-light-font-color);
 }

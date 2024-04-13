@@ -6,6 +6,7 @@
   --secondary-light-font-color: #9da4bd;
   --secondary-transparent-font-color: rgba(157, 164, 189, 0.6);
   --secondary-bg-color: #f7f7f7;
+  --primary-bg-color: #111319;
 }
 
 /* main styles */
@@ -63,7 +64,7 @@ img {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 2px solid tomato;
+  /* outline: 2px solid tomato; */
 }
 
 /* main font styles */
@@ -80,11 +81,21 @@ h1 {
 }
 
 .subtitle {
+  display: flex;
+  align-items: center;
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--secondary-font-color);
+}
+
+.subtitle::before {
+  content: "";
+  margin-right: 20px;
+  width: 61px;
+  height: 1px;
+  background-color: currentColor;
 }
 
 .section-title {
@@ -133,7 +144,7 @@ h1 {
 .header {
   padding-top: 40px;
 
-  background-color: #505050;
+  background-color: var(--primary-bg-color);
 }
 
 .header-logo {
@@ -191,7 +202,6 @@ h1 {
 }
 
 /* hero */
-/* Это веременно до 4 модуля */
 
 .hero-container {
   display: flex;
@@ -199,7 +209,7 @@ h1 {
 
 /* socials */
 /* ???????? как сделать чтобы текст шел снизу вверх, 
-посмотреть у Андрея */
+посмотреть у Андрея 5 модуль*/
 .hero-socials {
   width: 113px;
   /* display: flex; */
@@ -213,9 +223,7 @@ h1 {
   font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--secondary-font-color);
-  outline: 1px solid tomato;
-
-  /* transform: rotate(90deg); */
+  /* outline: 1px solid tomato; */
 }
 
 .hero-socials-link:hover,
@@ -223,13 +231,28 @@ h1 {
   color: var(--accent-color);
 }
 /* hero wrap */
+.hero-overlay {
+  /* а надо ли создавать отдельный блок вообще? я же могу объединить с hero-content*/
+  max-width: 1070px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--primary-bg-color);
+  background-image: linear-gradient(
+      rgba(25, 28, 38, 0.2),
+      rgba(25, 28, 38, 0.2)
+    ),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .hero-content {
   flex-grow: 1;
   padding: 272px 100px 206px;
   /* width: calc(100% - 113px); */
-  background-color: #505050;
 }
+
 .hero-content > .top-title {
   margin-top: 0;
   margin-bottom: 20px;
@@ -299,7 +322,13 @@ h1 {
 
 /* prices */
 .prices.section {
-  background-color: #505050;
+  background-color: var(--primary-bg-color);
+  /* что-то у меня тут пошло не так */
+  /* background-image: url(../images/prices-bg.jpg),
+    linear-gradient(#111319, #111319); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .prices > .subtitle {
@@ -331,10 +360,21 @@ h1 {
 }
 
 .prices-item-text {
+  display: flex;
+  align-items: center;
   font-size: 18px;
   line-height: 1.67;
   color: var(--secondary-light-font-color);
   letter-spacing: 0.02em;
+}
+
+/* как сделать так чтобы линия шла до цены? */
+.prices-item-text.left::after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  margin-left: 25px;
+  background-color: rgba(157, 164, 189, 0.12);
 }
 
 .prices-item:last-child {
@@ -342,6 +382,9 @@ h1 {
 }
 
 .prices .button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   color: var(--main-white-color);
 }
 
@@ -485,7 +528,7 @@ h1 {
 
 .form-contacts {
   display: flex;
-  background-color: #505050;
+  background-color: var(--primary-bg-color);
 }
 
 .form-contacts .container {

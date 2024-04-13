@@ -368,6 +368,7 @@ h1 {
   letter-spacing: 0.02em;
 }
 
+<<<<<<< Updated upstream
 /* как сделать так чтобы линия шла до цены? */
 .prices-item-text.left::after {
   content: "";
@@ -584,3 +585,8 @@ h1 {
   letter-spacing: 0.02em;
   color: var(--secondary-light-font-color);
 }
+=======
+.footer .container {
+  display: flex;
+}
+>>>>>>> Stashed changes

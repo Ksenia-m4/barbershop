@@ -149,6 +149,7 @@ h1 {
 
 .header-logo {
   margin-right: 70px;
+  fill: var(--accent-color);
 }
 
 .header-container {
@@ -322,10 +323,10 @@ h1 {
 
 /* prices */
 .prices.section {
-  background-color: var(--primary-bg-color);
-  /* что-то у меня тут пошло не так */
-  /* background-image: url(../images/prices-bg.jpg),
-    linear-gradient(#111319, #111319); */
+  margin: 0 auto;
+  max-width: 1280px;
+  background-image: url(../images/prices-bg.png),
+    linear-gradient(#111319, #111319);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -348,15 +349,31 @@ h1 {
 
 .prices-list {
   width: calc(100% / 2);
-
-  outline: 2px solid tomato;
   padding: 30px 40px;
+}
+
+.prices-list:first-child {
+  background-image: linear-gradient(180deg, #171a24, #171a2420);
+}
+
+.prices-list:last-child {
+  background-image: linear-gradient(180deg, #090b13, #090b1320);
 }
 
 .prices-item {
   display: flex;
+  gap: 16px;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: baseline;
+}
+
+.prices-item::before {
+  content: '';
+  width: 100px;
+  height: 1px;
+  flex-grow: 1;
+  background-color: rgba(157, 164, 189, 0.12);
 }
 
 .prices-item-text {
@@ -368,14 +385,8 @@ h1 {
   letter-spacing: 0.02em;
 }
 
-<<<<<<< Updated upstream
-/* как сделать так чтобы линия шла до цены? */
-.prices-item-text.left::after {
-  content: "";
-  width: 100px;
-  height: 1px;
-  margin-left: 25px;
-  background-color: rgba(157, 164, 189, 0.12);
+.prices-item-text:first-child {
+  order: -1;
 }
 
 .prices-item:last-child {
@@ -392,21 +403,27 @@ h1 {
 /* Features */
 .features.container {
   display: flex;
+  padding-left: 96px;
+  padding-right: 70px;
+  gap: 130px;
 }
 
 .features-left-container {
   display: flex;
+
   flex-wrap: wrap;
+  flex-shrink: 0;
   width: 370px;
-  margin-right: 130px;
+  /* margin-right: 130px; */
 }
 
 .features-list {
   /* width: 170px; */
-  width: calc((100% - 30px) / 2);
+  width: 170px;
   padding: 16px 24px 19px 24px;
 
   text-align: center;
+  color: var(--secondary-font-color);
   background-color: var(--secondary-bg-color);
 }
 
@@ -441,14 +458,20 @@ h1 {
   text-align: center;
 }
 
+.features-top-item::after {
+  content: '+';
+  margin-left: 3px;
+  font-weight: 600;
+  font-size: 16px;
+  vertical-align: top;
+  color: transparent;
+  text-shadow: 0 5px 0 var(--accent-color);
+}
+
 .features-botton-item {
   font-weight: 600;
   font-size: 11px;
   text-align: center;
-}
-
-.features-content-container {
-  width: 500px;
 }
 
 .features .subtitle {
@@ -456,6 +479,7 @@ h1 {
 }
 
 .features .section-title {
+  max-width: 420px;
   margin-bottom: 20px;
 }
 
@@ -482,10 +506,6 @@ h1 {
   display: flex;
 }
 
-.barbers-img {
-  margin-bottom: 30px;
-}
-
 .barbers-item {
   width: calc((100% - 60px) / 3);
 }
@@ -495,6 +515,7 @@ h1 {
 }
 
 .barber-secondary-title {
+  margin-top: 30px;
   margin-bottom: 8px;
   font-weight: 400;
   font-size: 18px;
@@ -503,9 +524,38 @@ h1 {
 }
 
 .barber-subtitle {
+  margin-bottom: 30px;
   text-align: center;
   color: var(--accent-color);
 }
+
+.barber-socials-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.barber-socials-item {
+  width: 44px;
+  height: 44px;
+}
+
+.barber-socials-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+  border-radius: 50%;
+}
+
+.icon-instagram {
+  fill: var(--secondary-font-color);
+}
+
+.icon-instagram:hover {
+  fill: var(--accent-color);
+}
+
 
 /* portfolio */
 .portfolio .subtitle {

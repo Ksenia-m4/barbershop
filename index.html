@@ -21,7 +21,10 @@
     <header class="header">
       <div class="container header-container">
         <a class="header-logo" href="./index.html">
-          <img src="./images/Logo.svg" alt="Logo" />
+          <!-- <img src="./images/Logo.svg" alt="Logo" /> -->
+          <svg width="69" height="56">
+            <use href="./images/icon-sprite.svg#icon-logo"></use>
+          </svg>
         </a>
         <nav class="main-nav">
           <ul class="header-menu">
@@ -119,39 +122,37 @@
           <div class="prices-content">
             <ul class="prices-list">
               <li class="prices-item">
-                <p class="prices-item-text left">Men’s haircut</p>
+                <p class="prices-item-text">Men’s haircut</p>
                 <p class="prices-item-text">from 300 uah.</p>
               </li>
               <li class="prices-item">
-                <p class="prices-item-text left">Beard trim</p>
+                <p class="prices-item-text">Beard trim</p>
                 <p class="prices-item-text">from 300 uah.</p>
               </li>
               <li class="prices-item">
-                <p class="prices-item-text left">Mustache trim</p>
+                <p class="prices-item-text">Mustache trim</p>
                 <p class="prices-item-text">from 200 uah.</p>
               </li>
               <li class="prices-item">
-                <p class="prices-item-text left">Straight razor shave</p>
+                <p class="prices-item-text">Straight razor shave</p>
                 <p class="prices-item-text">from 200 uah.</p>
               </li>
             </ul>
             <ul class="prices-list">
               <li class="prices-item">
-                <p class="prices-item-text left">Trainee’s haircut</p>
+                <p class="prices-item-text">Trainee’s haircut</p>
                 <p class="prices-item-text">from 50 uah.</p>
               </li>
               <li class="prices-item">
-                <p class="prices-item-text left">Haircut under the nozzle</p>
+                <p class="prices-item-text">Haircut under the nozzle</p>
                 <p class="prices-item-text">from 200 uah.</p>
               </li>
               <li class="prices-item">
-                <p class="prices-item-text left">
-                  Children’s haircut (0-12 y.o.)
-                </p>
+                <p class="prices-item-text">Children’s haircut (0-12 y.o.)</p>
                 <p class="prices-item-text">from 300 uah.</p>
               </li>
               <li class="prices-item">
-                <p class="prices-item-text left">Camouflage of gray hair</p>
+                <p class="prices-item-text">Camouflage of gray hair</p>
                 <p class="prices-item-text">from 200 uah.</p>
               </li>
             </ul>
@@ -202,7 +203,6 @@
           <ul class="barbers-list">
             <li class="barbers-item">
               <img
-                class="barbers-img"
                 src="./images/barber-1.jpg"
                 alt="working barber"
                 width="370"
@@ -210,16 +210,28 @@
               />
               <h3 class="barber-secondary-title">John Smith</h3>
               <p class="barber-subtitle">Extreme Barber</p>
-              <ul>
-                <li><a href="" aria-label="Instagram"></a></li>
-                <li><a href="" aria-label="Twitter"></a></li>
-                <li><a href="" aria-label="Facebook"></a></li>
-                <li><a href="" aria-label="LinkedIn"></a></li>
+              <ul class="barber-socials-list">
+                <li class="barber-socials-item">
+                  <a href="" aria-label="Instagram"
+                    ><svg class="icon-instagram" width="20" height="20">
+                      <use
+                        href="./images/icon-sprite.svg#icon-instagram"
+                      ></use></svg
+                  ></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a href="" aria-label="Twitter"></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a href="" aria-label="Facebook"></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a href="" aria-label="LinkedIn"></a>
+                </li>
               </ul>
             </li>
             <li class="barbers-item">
               <img
-                class="barbers-img"
                 src="./images/barber-2.jpg"
                 alt="working barber"
                 width="370"
@@ -227,16 +239,23 @@
               />
               <h4 class="barber-secondary-title">Michele Doe</h4>
               <p class="barber-subtitle">Extreme Barber</p>
-              <ul>
-                <li><a href="" aria-label="Instagram"></a></li>
-                <li><a href="" aria-label="Twitter"></a></li>
-                <li><a href="" aria-label="Facebook"></a></li>
-                <li><a href="" aria-label="LinkedIn"></a></li>
+              <ul class="barber-socials-list">
+                <li class="barber-socials-item">
+                  <a href="" aria-label="Instagram"></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a href="" aria-label="Twitter"></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a href="" aria-label="Facebook"></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a href="" aria-label="LinkedIn"></a>
+                </li>
               </ul>
             </li>
             <li class="barbers-item">
               <img
-                class="barbers-img"
                 src="./images/barber-3.jpg"
                 alt="working barber"
                 width="370"
@@ -244,11 +263,43 @@
               />
               <h4 class="barber-secondary-title">Alan Black</h4>
               <p class="barber-subtitle">Extreme Barber</p>
-              <ul>
-                <li><a href="" aria-label="Instagram"></a></li>
-                <li><a href="" aria-label="Twitter"></a></li>
-                <li><a href="" aria-label="Facebook"></a></li>
-                <li><a href="" aria-label="LinkedIn"></a></li>
+              <ul class="barber-socials-list">
+                <li class="barber-socials-item">
+                  <a
+                    class="barber-socials-link"
+                    href=""
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  ></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a
+                    class="barber-socials-link"
+                    href=""
+                    aria-label="Twitter"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  ></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a
+                    class="barber-socials-link"
+                    href=""
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  ></a>
+                </li>
+                <li class="barber-socials-item">
+                  <a
+                    class="barber-socials-link"
+                    href=""
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  ></a>
+                </li>
               </ul>
             </li>
           </ul>

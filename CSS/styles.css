@@ -211,15 +211,27 @@ h1 {
 /* socials */
 /* ???????? как сделать чтобы текст шел снизу вверх, 
 посмотреть у Андрея 5 модуль*/
-.hero-socials {
-  width: 113px;
-  /* display: flex; */
-}
 
-.hero-socials-link {
+.hero.social-list {
   padding-top: 20px;
   padding-bottom: 20px;
+}
 
+.social-list {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.social-list::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 60px;
+  background-color: var(--secondary-font-color);
+}
+
+.social-links {
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -227,10 +239,11 @@ h1 {
   /* outline: 1px solid tomato; */
 }
 
-.hero-socials-link:hover,
-.hero-socials-link:focus {
+.social-links:hover,
+.social-links:focus {
   color: var(--accent-color);
 }
+
 /* hero wrap */
 .hero-overlay {
   /* а надо ли создавать отдельный блок вообще? я же могу объединить с hero-content*/
@@ -369,7 +382,7 @@ h1 {
 }
 
 .prices-item::before {
-  content: '';
+  content: "";
   width: 100px;
   height: 1px;
   flex-grow: 1;
@@ -459,7 +472,7 @@ h1 {
 }
 
 .features-top-item::after {
-  content: '+';
+  content: "+";
   margin-left: 3px;
   font-weight: 600;
   font-size: 16px;
@@ -519,6 +532,7 @@ h1 {
   margin-bottom: 8px;
   font-weight: 400;
   font-size: 18px;
+  color: var(--secondary-font-color);
   letter-spacing: 0.02em;
   text-align: center;
 }
@@ -541,21 +555,24 @@ h1 {
 }
 
 .barber-socials-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: tomato;
+  background-color: var(--main-white-color);
   border-radius: 50%;
 }
 
-.icon-instagram {
+.barber-socials-icon {
   fill: var(--secondary-font-color);
+  width: 20px;
+  height: 20px;
 }
 
-.icon-instagram:hover {
+.barber-socials-icon:hover {
   fill: var(--accent-color);
 }
-
 
 /* portfolio */
 .portfolio .subtitle {
@@ -635,8 +652,19 @@ h1 {
   letter-spacing: 0.02em;
   color: var(--secondary-light-font-color);
 }
-=======
-.footer .container {
+
+/* footer */
+.footer {
+  padding-top: 56px;
+  padding-bottom: 56px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
->>>>>>> Stashed changes
+
+.copyright {
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--secondary-light-font-color);
+}

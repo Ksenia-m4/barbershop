@@ -110,7 +110,7 @@ h1 {
 .button {
   padding: 12px 20px;
   min-width: 160px;
-  /* height: 40px; */
+  height: 40px;
 
   font-weight: 600;
   font-size: 12px;
@@ -142,14 +142,17 @@ h1 {
 /* header */
 
 .header {
+  position: absolute;
+  top: 0;
+  width: 100%;
   padding-top: 40px;
 
-  background-color: var(--primary-bg-color);
+  /* background-color: var(--primary-bg-color); */
 }
 
 .header-logo {
   margin-right: 70px;
-  fill: var(--accent-color);
+  fill: var(--secondary-font-color);
 }
 
 .header-container {
@@ -195,6 +198,7 @@ h1 {
 
 .header-right-link {
   display: flex;
+  align-items: center;
 }
 
 .header-contact {
@@ -206,15 +210,22 @@ h1 {
 
 .hero-container {
   display: flex;
+  gap: 30px;
 }
 
 /* socials */
-/* ???????? как сделать чтобы текст шел снизу вверх, 
-посмотреть у Андрея 5 модуль*/
+
+.social-list-wrap {
+  width: 70px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 40px;
+  padding-left: 26px;
+}
 
 .hero.social-list {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
 }
 
 .social-list {
@@ -246,10 +257,8 @@ h1 {
 
 /* hero wrap */
 .hero-overlay {
-  /* а надо ли создавать отдельный блок вообще? я же могу объединить с hero-content*/
-  max-width: 1070px;
-  margin-left: auto;
-  margin-right: auto;
+  min-width: 1070px;
+  min-height: 680px;
   background-color: var(--primary-bg-color);
   background-image: linear-gradient(
       rgba(25, 28, 38, 0.2),
@@ -262,9 +271,8 @@ h1 {
 }
 
 .hero-content {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   padding: 272px 100px 206px;
-  /* width: calc(100% - 113px); */
 }
 
 .hero-content > .top-title {

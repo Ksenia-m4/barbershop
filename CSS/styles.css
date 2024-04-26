@@ -199,6 +199,7 @@ h1 {
 .header-right-link {
   display: flex;
   align-items: center;
+  margin-right: 8px;
 }
 
 .header-contact {
@@ -603,12 +604,19 @@ h1 {
 /* form-contacts */
 
 .form-contacts {
-  display: flex;
-  background-color: var(--primary-bg-color);
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #191c26;
+  background-image: url(../images/contacts-bg.png);
+  background-repeat: no-repeat;
+  background-size: calc(50% - 15px);
+  background-position: right;
 }
 
-.form-contacts .container {
+.form-contacts-wrap {
   display: flex;
+  /* width: calc(50% + 15px); */
 }
 
 .form-contacts .section-title {
@@ -616,11 +624,86 @@ h1 {
 }
 
 /* form */
+.form-container {
+  width: calc(50% + 15px);
+  padding-right: 40px;
+}
+
+.form-container .section-title {
+  margin-bottom: 40px;
+}
+
 .form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 44px;
+}
+
+.form-item {
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+  color: var(--main-white-color);
+  outline: transparent;
+
+  transition: border-color 300ms linear;
+}
+
+.form-item:focus + .form-label,
+.form-item:not(:placeholder-shown) + .form-label {
+  transform: translateY(-150%);
+  color: var(--main-white-color);
+}
+
+.form-item:focus,
+.form-item:not(:placeholder-shown) {
+  border-color: var(--main-white-color);
+}
+
+.form-input {
+  width: 260px;
+  height: 24px;
+}
+
+.form-message {
+  width: 100%;
+  height: 76px;
+  resize: none;
+}
+
+.form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(157, 164, 189, 0.4);
+
+  transition: transform 300ms linear, color 300ms linear;
+}
+
+.text-field {
+  width: 100%;
+  position: relative;
+  margin-bottom: 44px;
 }
 
 /* contacts */
-.contacts .section-title {
+.contacts-container {
+  width: calc(50% - 15px);
+  padding-left: 115px;
+}
+
+.contacts-container .section-title {
   margin-bottom: 40px;
 }
 

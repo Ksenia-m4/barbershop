@@ -442,16 +442,51 @@
       </section>
 
       <!-- Form -->
+
       <section class="form-contacts section">
-        <!-- Online booking -->
-        <div class="container">
-          <section class="form">
+        <div class="container form-contacts-wrap">
+          <!-- Online booking -->
+          <div class="form-container">
             <h2 class="section-title">Online-booking</h2>
-          </section>
+            <form class="form">
+              <div class="input-field">
+                <input
+                  type="text"
+                  id="user-name"
+                  name="user-name"
+                  class="form-input form-item"
+                  placeholder=" "
+                  required
+                />
+                <label for="user-name" class="form-label">name*</label>
+              </div>
+              <div class="input-field">
+                <input
+                  type="tel"
+                  id="user-tel"
+                  name="user-tel"
+                  class="form-input form-item"
+                  placeholder=" "
+                  required
+                />
+                <label for="user-tel" class="form-label">phone*</label>
+              </div>
+
+              <div class="text-field form-mess-wrap">
+                <textarea
+                  name="user-message"
+                  id="user-message"
+                  class="form-message form-item"
+                  placeholder=" "
+                ></textarea>
+                <label for="user-message" class="form-label">message</label>
+              </div>
+              <button type="submit" class="button">send</button>
+            </form>
+          </div>
 
           <!-- Contacts -->
-
-          <section class="contacts">
+          <div class="contacts-container">
             <h2 class="section-title">Contacts</h2>
             <address>
               <ul class="contacts-list">
@@ -476,11 +511,11 @@
             </address>
             <h3 class="subtitle">working hours</h3>
             <p class="contacts-schedule">Every day from 9:00 to 22:00</p>
-          </section>
+          </div>
         </div>
       </section>
     </main>
-
+    <!-- footer -->
     <footer>
       <div class="footer container">
         <p class="copyright">&#169; Copyright 2020</p>

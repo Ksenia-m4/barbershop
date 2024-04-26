@@ -732,7 +732,7 @@ h1 {
   text-decoration-skip-ink: none;
 }
 
-.contacts .subtitle {
+.form-contacts .subtitle {
   margin-bottom: 20px;
   color: var(--main-white-color);
 }

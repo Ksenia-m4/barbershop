@@ -1,0 +1,20 @@
+/* common styles */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--main-white-color);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--main-font-color);
+}
+
+h1 {
+  margin: 0 0 20px;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  letter-spacing: 0.05em;
+
+  color: var(--main-white-color);
+}
